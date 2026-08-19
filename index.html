@@ -360,12 +360,33 @@ const btnAnd = document.getElementById('btn-and');
 btnIos.href = iosUrl();
 btnAnd.href = andUrl();
 
-/* 클릭 집계 (Umami / GA4 연결 시 자동 기록) */
+/* 클릭 집계
+   버튼을 누르면 즉시 스토어로 이동하기 때문에, 일반 요청은 중간에 잘립니다.
+   keepalive 옵션으로 보내야 페이지를 떠난 뒤에도 전송이 완료됩니다. */
+const UMAMI_ID = '568aa719-0765-4d9f-a514-51941eef375e';
 function track(store){
   try{
-    if (window.umami) window.umami.track('click_' + store, { source: src });
-    if (window.gtag)  window.gtag('event','store_click',{ store, source: src });
+    fetch('https://cloud.umami.is/api/send', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      keepalive:true,
+      body: JSON.stringify({
+        type:'event',
+        payload:{
+          website: UMAMI_ID,
+          hostname: location.hostname,
+          language: navigator.language,
+          referrer: document.referrer,
+          screen: screen.width + 'x' + screen.height,
+          title: document.title,
+          url: location.pathname + location.search,
+          name: 'click_' + store,
+          data: { source: src },
+        },
+      }),
+    });
   }catch(e){}
+  try{ if (window.gtag) window.gtag('event','store_click',{ store, source: src }); }catch(e){}
 }
 btnIos.addEventListener('click', () => track('ios'));
 btnAnd.addEventListener('click', () => track('android'));
