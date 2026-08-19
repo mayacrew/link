@@ -86,10 +86,21 @@
   .btn-and .tag{background:var(--blue);color:#06364a}
   .btn[hidden]{display:none}
 
-  .shot{width:100%;max-width:200px;border-radius:14px;margin:20px auto 0;display:block;
-        box-shadow:0 10px 26px rgba(150,120,180,.25);border:3px solid #fff}
-  .foot{margin-top:20px;font-size:11.5px;color:#a08ea0;line-height:1.7}
-  .foot a{color:#a08ea0}
+  /* ── 앱스토어식 미리보기 캐러셀 ── */
+  .shots{
+    display:flex; gap:12px; overflow-x:auto; margin:22px -22px 0; padding:4px 22px 14px;
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .shots::-webkit-scrollbar{display:none}
+  .shots img{
+    flex:none; width:158px; aspect-ratio:9/16; object-fit:cover;
+    border-radius:16px; border:3px solid #fff; scroll-snap-align:center;
+    box-shadow:0 10px 26px rgba(150,120,180,.25);
+  }
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:2px}
+  .dots i{width:6px;height:6px;border-radius:50%;background:#e5cfe0;transition:.2s}
+  .dots i.on{background:var(--pink);width:16px;border-radius:3px}
 </style>
 </head>
 <body>
@@ -112,12 +123,15 @@
     Google Play<span class="tag" id="tag-and" hidden>추천</span>
   </a>
 
-  <img class="shot" src="shot1.jpg" alt="앱 화면" loading="lazy" />
-
-  <p class="foot">
-    MAYACREW Inc.<br />
-    iOS 17+ · Android 8.0+
-  </p>
+  <div class="shots" id="shots">
+    <img src="shot1.jpg" alt="앱 미리보기 1" />
+    <img src="shot2.jpg" alt="앱 미리보기 2" loading="lazy" />
+    <img src="shot3.jpg" alt="앱 미리보기 3" loading="lazy" />
+    <img src="shot4.jpg" alt="앱 미리보기 4" loading="lazy" />
+    <img src="shot5.jpg" alt="앱 미리보기 5" loading="lazy" />
+    <img src="shot6.jpg" alt="앱 미리보기 6" loading="lazy" />
+  </div>
+  <div class="dots" id="dots"></div>
 </main>
 
 <script>
@@ -183,6 +197,17 @@ function track(store) {
 }
 btnIos.addEventListener('click', () => track('ios'));
 btnAnd.addEventListener('click', () => track('android'));
+
+/* ── 미리보기 캐러셀 인디케이터 ── */
+const shots = document.getElementById('shots');
+const dots  = document.getElementById('dots');
+[...shots.children].forEach(() => dots.appendChild(document.createElement('i')));
+function syncDots() {
+  const i = Math.round(shots.scrollLeft / (shots.scrollWidth / shots.children.length));
+  [...dots.children].forEach((d, n) => d.classList.toggle('on', n === i));
+}
+shots.addEventListener('scroll', syncDots, { passive: true });
+syncDots();
 
 /* 접속 로그 (개발용) */
 console.log('[link] source =', src);
