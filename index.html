@@ -3,136 +3,323 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>얼짱캠 2003 — 다운로드</title>
-<meta name="description" content="2003년으로 돌아가는 얼짱캠. 뽀샤시 소프트 필터, 픽셀 하트, 날짜 도장까지 그때 그 감성 그대로." />
+<title>얼짱캠 2003 - 내 폰을 2003년으로 - Microsoft Internet Explorer</title>
+<meta name="description" content="2003년 그때 그 웹캠 감성 그대로. 320x240 VGA 화질, 도트 스티커, 날짜 도장, GIF까지." />
 
-<!-- Open Graph (인스타·카톡 공유 미리보기) -->
+<!-- 공유 미리보기 -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="얼짱캠 2003 — Y2K 뽀샤시" />
-<meta property="og:description" content="내 폰이 2003년 웹캠으로. 앱 다운로드하기 →" />
+<meta property="og:title" content="얼짱캠 2003 — 내 폰을 2003년으로" />
+<meta property="og:description" content="원조 뽀샤시 · 새벽 모니터광 · 날짜 도장 ✧ 앱 다운로드하기" />
 <meta property="og:image" content="appicon.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="appicon.png" />
 
 <!-- ───────── 방문자 분석 (선택) ─────────
-     Umami Cloud 가입 후 아래 주석을 풀고 data-website-id만 바꾸면
-     페이지뷰 + 아래 버튼 클릭 이벤트가 자동으로 집계됩니다.
+     Umami Cloud 가입 후 주석을 풀고 data-website-id만 교체하면
+     방문자 수 + 아래 버튼 클릭 수가 집계됩니다.
 <script defer src="https://cloud.umami.is/script.js"
         data-website-id="여기에-사이트-ID"></script>
 ────────────────────────────────────── -->
 
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <style>
-  :root{
-    --pink:#ff5fa2; --pink-d:#e02f7f; --blue:#5fd0ff; --cream:#fff6fb;
-    --ink:#3b2233;
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;padding:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
-                "Malgun Gothic",system-ui,sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(1200px 600px at 15% -10%, #ffd9ec 0%, transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, #d6f0ff 0%, transparent 55%),
-      linear-gradient(180deg,#fff9fc 0%, #f6ecff 55%, #eaf6ff 100%);
-    min-height:100dvh;
-    display:flex; align-items:center; justify-content:center;
-    padding:28px 18px 40px;
-  }
-  /* 반짝이 배경 */
-  body::before{
-    content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
-    background-image:
-      radial-gradient(2px 2px at 12% 22%, #fff 50%, transparent 51%),
-      radial-gradient(2px 2px at 78% 14%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 34% 76%, #fff 50%, transparent 51%),
-      radial-gradient(2px 2px at 88% 62%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 58% 40%, #fff 50%, transparent 51%);
-  }
-  .card{
-    position:relative; width:100%; max-width:400px; text-align:center;
-    background:rgba(255,255,255,.72);
-    border:2px solid #fff;
-    border-radius:26px;
-    padding:30px 22px 26px;
-    box-shadow:0 18px 50px rgba(214,120,170,.28), 0 2px 0 #fff inset;
-    backdrop-filter:blur(10px);
-  }
-  .icon{
-    width:96px;height:96px;border-radius:24px;display:block;margin:0 auto 14px;
-    box-shadow:0 10px 26px rgba(224,47,127,.3);
-  }
-  h1{font-size:22px;margin:0 0 6px;letter-spacing:-.4px}
-  .sub{font-size:13.5px;line-height:1.65;color:#7a5c6e;margin:0 0 22px}
-  .hearts{font-size:13px;letter-spacing:3px;color:var(--pink);margin-bottom:16px}
+@font-face{
+  font-family:'DungGeunMo';
+  src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/DungGeunMo.woff') format('woff');
+  font-weight:normal; font-display:swap;
+}
+:root{
+  --navy:#1c3f9e;      --navy-d:#132c73;
+  --pink:#ff5fa0;      --pink-d:#e63a83;
+  --face:#d4d0c8;      /* 윈도우 회색 */
+  --paper:#fbfbff;     /* 페이지 바탕 */
+  --line:#9aa6c8;
+  --pix:'DungGeunMo','Galmuri11','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--pix);
+  background:#3a6ea5;              /* 윈도우 클래식 바탕 */
+  color:#111;
+  padding:14px 10px 26px;
+  display:flex; justify-content:center;
+  -webkit-font-smoothing:none;
+}
 
-  .btn{
-    display:flex;align-items:center;gap:12px;justify-content:center;
-    width:100%; padding:15px 18px; margin-bottom:11px;
-    border-radius:16px; text-decoration:none; font-size:15.5px; font-weight:700;
-    border:2px solid transparent; transition:transform .12s ease, box-shadow .12s ease;
-  }
-  .btn:active{transform:scale(.975)}
-  .btn svg{width:20px;height:20px;flex:none}
-  .btn-ios{background:linear-gradient(135deg,#2b2b2f,#111);color:#fff;
-           box-shadow:0 8px 22px rgba(0,0,0,.22)}
-  .btn-and{background:linear-gradient(135deg,#fff,#f4f7ff);color:#1f2937;
-           border-color:#dfe6f5; box-shadow:0 8px 22px rgba(90,120,190,.16)}
-  .btn .tag{
-    margin-left:6px;font-size:10.5px;font-weight:800;letter-spacing:.3px;
-    padding:3px 8px;border-radius:999px;background:var(--pink);color:#fff;
-  }
-  .btn-and .tag{background:var(--blue);color:#06364a}
-  .btn[hidden]{display:none}
+/* ══ IE 창 프레임 ══ */
+.ie{
+  width:100%; max-width:640px;
+  background:var(--face);
+  border:2px solid; border-color:#fff #404040 #404040 #fff;
+  box-shadow:2px 2px 0 #000, 0 14px 40px rgba(0,0,0,.4);
+}
+.titlebar{
+  display:flex; align-items:center; gap:6px;
+  background:linear-gradient(90deg,#0a246a 0%,#3a6ea5 60%,#a6caf0 100%);
+  color:#fff; padding:4px 4px 4px 6px; font-size:12px; font-weight:bold;
+}
+.titlebar .t{flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.titlebar .ico{width:15px;height:15px;flex:none;image-rendering:pixelated}
+.wbtn{
+  width:18px;height:16px;flex:none; background:var(--face);
+  border:2px solid; border-color:#fff #404040 #404040 #fff;
+  font-size:10px; line-height:10px; color:#000; font-family:monospace;
+  display:flex;align-items:center;justify-content:center; font-weight:bold;
+}
+.menubar{
+  display:flex; gap:12px; padding:3px 8px; font-size:11.5px;
+  border-bottom:1px solid #808080; background:var(--face);
+  overflow:hidden; white-space:nowrap;
+}
+.menubar u{text-decoration:underline}
+.addrbar{
+  display:flex; align-items:center; gap:6px; padding:4px 6px;
+  border-bottom:1px solid #808080; background:var(--face); font-size:11.5px;
+}
+.addrbar .field{
+  flex:1; display:flex; align-items:center; gap:5px; background:#fff;
+  border:2px solid; border-color:#404040 #fff #fff #404040; padding:3px 6px;
+  font-size:12px; overflow:hidden; white-space:nowrap;
+}
+.addrbar .field b{font-weight:normal}
+.go{
+  display:flex;align-items:center;gap:4px; background:var(--face); padding:3px 8px;
+  border:2px solid; border-color:#fff #404040 #404040 #fff; font-size:11.5px;
+}
 
-  /* ── 앱스토어식 미리보기 캐러셀 ── */
-  .shots{
-    display:flex; gap:12px; overflow-x:auto; margin:22px -22px 0; padding:4px 22px 14px;
-    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  .shots::-webkit-scrollbar{display:none}
-  .shots img{
-    flex:none; width:158px; aspect-ratio:9/16; object-fit:cover;
-    border-radius:16px; border:3px solid #fff; scroll-snap-align:center;
-    box-shadow:0 10px 26px rgba(150,120,180,.25);
-  }
-  .dots{display:flex;justify-content:center;gap:6px;margin-top:2px}
-  .dots i{width:6px;height:6px;border-radius:50%;background:#e5cfe0;transition:.2s}
-  .dots i.on{background:var(--pink);width:16px;border-radius:3px}
+/* ══ 페이지 본문 ══ */
+.page{
+  background:var(--paper);
+  border:2px solid; border-color:#404040 #fff #fff #404040;
+  margin:3px; padding:14px 14px 10px;
+  background-image:
+    radial-gradient(2px 2px at 8% 12%, #ffd9ec 50%, transparent 51%),
+    radial-gradient(2px 2px at 92% 26%, #dcefff 50%, transparent 51%),
+    radial-gradient(2px 2px at 22% 62%, #ffe9f5 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 84%, #e6e0ff 50%, transparent 51%);
+}
+.topbar{display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.welcome{
+  background:#111;color:#ffe94a;font-size:11px;letter-spacing:1px;
+  padding:2px 8px; border:1px solid #000; margin-left:6px;
+}
+.bgm{color:#333;cursor:pointer;user-select:none}
+.bgm b{color:var(--navy)}
+.bars{display:inline-flex;gap:2px;align-items:flex-end;vertical-align:-2px;margin-left:6px}
+.bars i{width:4px;background:#2fbf4f;display:block}
+.bars i:nth-child(1){height:5px}.bars i:nth-child(2){height:8px}
+.bars i:nth-child(3){height:11px}.bars i:nth-child(4){height:14px}
+
+hr.dot{border:0;border-top:2px dashed #b9c2dd;margin:12px 0}
+
+/* 헤더 */
+.hero{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:14px 0 6px}
+.hero img{width:88px;height:88px;image-rendering:auto;border:1px solid #cfd6ea}
+.hero .txt{text-align:left}
+.h1{font-size:34px;color:var(--navy);letter-spacing:1px;line-height:1.1}
+.h1 .sp{color:var(--pink);font-size:20px;vertical-align:8px}
+.h2{font-size:19px;color:var(--pink);margin-top:6px;letter-spacing:1px}
+.h2 .sp{color:#b39ddb}
+.tagline{text-align:center;font-size:14px;color:#333;margin:10px 0 2px;letter-spacing:.5px}
+
+/* 다운로드 버튼 */
+.btns{display:flex;gap:14px;justify-content:center;margin:18px 0 4px;flex-wrap:wrap}
+.dl{
+  flex:1 1 190px; max-width:250px; text-decoration:none; color:#111;
+  background:linear-gradient(180deg,#f4f3ee,#dcd8cc);
+  border:2px solid; border-color:#fff #7b7b6e #7b7b6e #fff;
+  box-shadow:2px 2px 0 #a9a495; padding:10px 12px 12px;
+  display:block; text-align:center;
+}
+.dl:active{box-shadow:none; transform:translate(2px,2px)}
+.chip{
+  display:inline-block; font-size:11.5px; padding:1px 10px; margin-bottom:8px;
+  border:1px solid #c9c3b4; background:#fff;
+}
+.chip.ios{color:var(--pink-d)}
+.chip.and{color:#2f8f3f}
+.dlrow{display:flex;align-items:center;gap:10px;justify-content:center}
+.dlrow .em{width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;font-size:26px}
+.dlrow .lab{text-align:left;line-height:1.25}
+.dlrow .lab b{display:block;font-size:16px;color:#111;font-weight:normal}
+.dlrow .lab s{display:block;font-size:13px;color:var(--navy);text-decoration:none}
+.dlrow .arw{color:var(--navy);font-size:13px;margin-left:2px}
+
+/* 미리보기 */
+.sect{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--navy);margin:4px 0 8px}
+.sect .fld{font-size:17px}
+.shots{
+  border:2px dashed #b9c2dd; padding:10px; display:flex; gap:10px;
+  overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.shots::-webkit-scrollbar{display:none}
+.shot{flex:none;width:118px;scroll-snap-align:center;text-align:center}
+.shot img{
+  width:100%; aspect-ratio:3/4; object-fit:cover; display:block;
+  border:2px solid; border-color:#404040 #fff #fff #404040; background:#000;
+}
+.shot span{display:block;font-size:12px;color:#444;margin-top:6px}
+
+/* 안내 박스 */
+.info{
+  display:flex; gap:12px; align-items:flex-start; position:relative;
+  background:#eaf0ff; border:2px solid #b9c2dd; padding:12px 14px; margin-top:14px;
+}
+.info .pc{font-size:34px;line-height:1;flex:none}
+.info h3{margin:0 0 6px;font-size:15px;color:var(--navy);font-weight:normal}
+.info p{margin:0;font-size:12.5px;line-height:1.75;color:#333}
+.new{
+  position:absolute; top:-10px; right:-6px; background:var(--pink); color:#fff;
+  font-size:11px; padding:3px 10px; border:2px solid #fff;
+  border-radius:12px; transform:rotate(-8deg); box-shadow:1px 1px 0 #b8306a;
+}
+
+/* 카운터 */
+.counter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;margin-top:16px;color:#333}
+.counter .lbl{letter-spacing:2px}
+.digits{display:inline-flex;gap:1px}
+.digits i{
+  background:#111;color:#fff;font-size:12px;padding:2px 4px;min-width:14px;
+  text-align:center;border:1px solid #555;font-style:normal;
+}
+.copy{color:#666;font-size:11.5px}
+.guest{margin-top:8px;font-size:12.5px;color:var(--pink-d)}
+.guest .gb{color:var(--pink-d);letter-spacing:1px}
+.guest .sep{color:#bbb;margin:0 6px}
+.guest .q{color:var(--navy)}
+
+/* 상태바 */
+.statusbar{
+  display:flex;gap:3px;padding:3px;background:var(--face);font-size:11.5px;
+}
+.statusbar div{
+  border:2px solid; border-color:#808080 #fff #fff #808080; padding:2px 6px;
+}
+.statusbar .s1{flex:1}
+.statusbar .s2{width:34px}
+.statusbar .s3{width:34px}
+
+@media (max-width:430px){
+  body{padding:6px 4px 18px}
+  .menubar{gap:8px;font-size:10.5px}
+  .h1{font-size:27px}.h2{font-size:16px}
+  .hero img{width:66px;height:66px}
+  .hero{gap:10px}
+  .tagline{font-size:12.5px}
+  .btns{gap:10px}
+  .dl{flex:1 1 100%}
+  .shot{width:104px}
+}
 </style>
 </head>
 <body>
-<main class="card">
-  <img class="icon" src="appicon.png" alt="얼짱캠 2003" />
-  <h1>얼짱캠 2003</h1>
-  <p class="sub">
-    내 폰이 2003년 웹캠으로 ✧<br />
-    뽀샤시 소프트 필터 · 픽셀 하트 · 날짜 도장
-  </p>
-  <div class="hearts">♡ ♥ ♡ ♥ ♡</div>
+<div class="ie">
 
-  <a id="btn-ios" class="btn btn-ios" href="#" rel="noopener">
-    <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-    App Store<span class="tag" id="tag-ios" hidden>추천</span>
-  </a>
-
-  <a id="btn-and" class="btn btn-and" href="#" rel="noopener">
-    <svg viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-    Google Play<span class="tag" id="tag-and" hidden>추천</span>
-  </a>
-
-  <div class="shots" id="shots">
-    <img src="shot1.jpg" alt="앱 미리보기 1" />
-    <img src="shot2.jpg" alt="앱 미리보기 2" loading="lazy" />
-    <img src="shot3.jpg" alt="앱 미리보기 3" loading="lazy" />
-    <img src="shot4.jpg" alt="앱 미리보기 4" loading="lazy" />
-    <img src="shot5.jpg" alt="앱 미리보기 5" loading="lazy" />
-    <img src="shot6.jpg" alt="앱 미리보기 6" loading="lazy" />
+  <!-- 타이틀 바 -->
+  <div class="titlebar">
+    <img class="ico" src="appicon.png" alt="" />
+    <span class="t">얼짱캠 2003 - 내 폰을 2003년으로 - Microsoft Internet Explorer</span>
+    <span class="wbtn">_</span><span class="wbtn">□</span><span class="wbtn">✕</span>
   </div>
-  <div class="dots" id="dots"></div>
-</main>
+
+  <!-- 메뉴 -->
+  <div class="menubar">
+    <span>파일(<u>F</u>)</span><span>편집(<u>E</u>)</span><span>보기(<u>V</u>)</span>
+    <span>즐겨찾기(<u>A</u>)</span><span>도구(<u>T</u>)</span><span>도움말(<u>H</u>)</span>
+  </div>
+
+  <!-- 주소창 -->
+  <div class="addrbar">
+    <span>주소(<u>D</u>)</span>
+    <span class="field"><img class="ico" src="appicon.png" alt="" style="width:13px;height:13px" /><b>https://ulzzangcam2003.kr</b></span>
+    <span class="go">➡ 이동</span>
+  </div>
+
+  <!-- 페이지 -->
+  <div class="page">
+
+    <div class="topbar">
+      <span>📹<span class="welcome">WELCOME</span></span>
+      <span class="bgm" id="bgm">BGM ▣ <b>ON</b> ♪<span class="bars"><i></i><i></i><i></i><i></i></span></span>
+    </div>
+
+    <hr class="dot" />
+
+    <div class="hero">
+      <img src="appicon.png" alt="얼짱캠 2003 아이콘" />
+      <div class="txt">
+        <div class="h1">얼짱캠 2003 <span class="sp">✧✧</span></div>
+        <div class="h2">내 폰을 2003년으로 <span class="sp">✧</span></div>
+      </div>
+    </div>
+
+    <p class="tagline">원조 뽀샤시 · 새벽 모니터광 · 날짜 도장</p>
+
+    <!-- 다운로드 -->
+    <div class="btns">
+      <a class="dl" id="btn-ios" href="#" rel="noopener">
+        <span class="chip ios">iPhone</span>
+        <span class="dlrow">
+          <span class="em">🖥️</span>
+          <span class="lab"><b>iPhone에서</b><s>시작하기</s></span>
+          <span class="arw">▶</span>
+        </span>
+      </a>
+      <a class="dl" id="btn-and" href="#" rel="noopener">
+        <span class="chip and">Android</span>
+        <span class="dlrow">
+          <span class="em">🤖</span>
+          <span class="lab"><b>Android에서</b><s>시작하기</s></span>
+          <span class="arw">▶</span>
+        </span>
+      </a>
+    </div>
+
+    <hr class="dot" />
+
+    <!-- 미리보기 -->
+    <div class="sect"><span class="fld">📁</span> 얼짱캠 2003 미리보기</div>
+    <div class="shots">
+      <div class="shot"><img src="shot1.jpg" alt="저화질 뽀샤시" /><span>저화질 뽀샤시</span></div>
+      <div class="shot"><img src="shot5.jpg" alt="새벽 모니터광" loading="lazy" /><span>새벽 모니터광</span></div>
+      <div class="shot"><img src="shot3.jpg" alt="날짜 도장" loading="lazy" /><span>날짜 도장</span></div>
+      <div class="shot"><img src="shot4.jpg" alt="GIF & 4연사" loading="lazy" /><span>GIF &amp; 4연사</span></div>
+      <div class="shot"><img src="shot2.jpg" alt="추억 앨범" loading="lazy" /><span>추억 앨범</span></div>
+      <div class="shot"><img src="shot6.jpg" alt="캠코더 모드" loading="lazy" /><span>캠코더 모드</span></div>
+    </div>
+
+    <!-- 안내 -->
+    <div class="info">
+      <span class="new">NEW</span>
+      <span class="pc">🖥️</span>
+      <div>
+        <h3>얼짱캠 2003 은?</h3>
+        <p>2003년 그때 그 웹캠 감성을 그대로!<br />
+           320x240 VGA 화질, 도트 스티커, 날짜 도장, GIF까지 지원해요.</p>
+      </div>
+    </div>
+
+    <!-- 카운터 -->
+    <div class="counter">
+      <span class="lbl">TODAY</span>
+      <span class="digits" id="today"></span>
+      <span class="lbl">TOTAL</span>
+      <span class="digits" id="total"></span>
+      <span class="copy">| COPYRIGHT(C) 2003 ULZZANGCAM</span>
+    </div>
+    <div class="guest">
+      📖 <span class="gb">GUESTBOOK</span><span class="sep">|</span><span class="q">얼짱각도 45° 기억나는 사람? &gt;_&lt;</span>
+    </div>
+
+  </div>
+
+  <!-- 상태바 -->
+  <div class="statusbar">
+    <div class="s1">🔗 완료</div><div class="s2"></div><div class="s3"></div>
+    <div>🌐 인터넷</div>
+  </div>
+</div>
 
 <script>
 /* ══════════════════════════════════════════════════════════
@@ -142,33 +329,28 @@ const CONFIG = {
   iosAppId:   '6787339271',
   androidPkg: 'com.mayacrew.haduricam',
 
-  // App Store Connect → 사용자 및 액세스 → (하단) Provider ID.
-  // 채워 넣으면 App Store Connect의 App Analytics > 캠페인에서
-  // 이 링크로 들어온 실제 설치 수를 볼 수 있습니다. 비워두면 그냥 일반 링크.
+  // App Store Connect → 사용자 및 액세스 (하단) Provider ID.
+  // 채우면 App Analytics > 캠페인에서 이 링크로 들어온 설치 수를 볼 수 있습니다.
   appleProviderId: '',
 
-  // 기본 유입 출처. 링크 뒤에 ?src=tiktok 처럼 붙이면 그 값으로 바뀝니다.
   defaultSource: 'instagram',
   campaign: 'bio_link',
 };
 
-/* ── 유입 출처 (인스타/틱톡/유튜브 등 구분용) ── */
+/* 유입 출처 — 링크 뒤에 ?src=tiktok 처럼 붙이면 소스별로 구분됩니다 */
 const src = (new URLSearchParams(location.search).get('src') || CONFIG.defaultSource)
-              .replace(/[^a-z0-9_-]/gi, '').slice(0, 20) || 'direct';
+              .replace(/[^a-z0-9_-]/gi,'').slice(0,20) || 'direct';
 
-/* ── App Store 링크 (pt = Provider ID, ct = 캠페인 라벨, 최대 40자) ── */
-function iosUrl() {
+/* App Store (pt=Provider ID, ct=캠페인 라벨 최대 40자) */
+function iosUrl(){
   const p = new URLSearchParams();
   if (CONFIG.appleProviderId) p.set('pt', CONFIG.appleProviderId);
-  p.set('ct', (src + '_' + CONFIG.campaign).slice(0, 40));
-  p.set('mt', '8');
+  p.set('ct', (src + '_' + CONFIG.campaign).slice(0,40));
+  p.set('mt','8');
   return `https://apps.apple.com/kr/app/id${CONFIG.iosAppId}?${p}`;
 }
-
-/* ── Google Play 링크 ──
-   referrer 값은 반드시 통째로 URL 인코딩해야 UTM이 살아남습니다.
-   Play Console → 획득 보고서 → 스토어 유입경로 에서 확인. */
-function andUrl() {
+/* Google Play — referrer 값은 통째로 인코딩해야 UTM이 살아남습니다 */
+function andUrl(){
   const referrer = `utm_source=${src}&utm_medium=bio&utm_campaign=${CONFIG.campaign}`;
   return `https://play.google.com/store/apps/details?id=${CONFIG.androidPkg}`
        + `&referrer=${encodeURIComponent(referrer)}`;
@@ -179,38 +361,38 @@ const btnAnd = document.getElementById('btn-and');
 btnIos.href = iosUrl();
 btnAnd.href = andUrl();
 
-/* ── OS 감지: 자동 이동은 하지 않고, 맞는 쪽에 "추천" 배지만 ── */
-const ua = navigator.userAgent;
-const isIOS = /iPad|iPhone|iPod/.test(ua) || (ua.includes('Mac') && 'ontouchend' in document);
-const isAnd = /Android/.test(ua);
-if (isIOS) { document.getElementById('tag-ios').hidden = false; btnIos.parentNode.prepend(btnIos); }
-if (isAnd) { document.getElementById('tag-and').hidden = false; btnAnd.parentNode.prepend(btnAnd); }
-
-/* ── 클릭 집계 ──
-   페이지를 떠나면서 보내는 요청이라 sendBeacon / keepalive 를 써야
-   중간에 잘리지 않습니다. Umami를 붙였으면 자동으로 이벤트가 남습니다. */
-function track(store) {
-  try {
+/* 클릭 집계 (Umami / GA4 연결 시 자동 기록) */
+function track(store){
+  try{
     if (window.umami) window.umami.track('click_' + store, { source: src });
-    if (window.gtag)  window.gtag('event', 'store_click', { store, source: src });
-  } catch (e) {}
+    if (window.gtag)  window.gtag('event','store_click',{ store, source: src });
+  }catch(e){}
 }
 btnIos.addEventListener('click', () => track('ios'));
 btnAnd.addEventListener('click', () => track('android'));
 
-/* ── 미리보기 캐러셀 인디케이터 ── */
-const shots = document.getElementById('shots');
-const dots  = document.getElementById('dots');
-[...shots.children].forEach(() => dots.appendChild(document.createElement('i')));
-function syncDots() {
-  const i = Math.round(shots.scrollLeft / (shots.scrollWidth / shots.children.length));
-  [...dots.children].forEach((d, n) => d.classList.toggle('on', n === i));
+/* 방문자 카운터 (장식) — TODAY는 로컬 방문 기준, TOTAL은 고정 연출 */
+function digits(el, str){
+  el.innerHTML = '';
+  [...str].forEach(c => { const i = document.createElement('i'); i.textContent = c; el.appendChild(i); });
 }
-shots.addEventListener('scroll', syncDots, { passive: true });
-syncDots();
+(function counter(){
+  const today = new Date().toISOString().slice(0,10);
+  let n = 0;
+  try{
+    const k = 'v-' + today;
+    n = Number(localStorage.getItem(k) || 0) + 1;
+    localStorage.setItem(k, n);
+  }catch(e){ n = 1; }
+  digits(document.getElementById('today'), String(2003 + n).slice(-4));
+  digits(document.getElementById('total'), '02030716');
+})();
 
-/* 접속 로그 (개발용) */
-console.log('[link] source =', src);
+/* BGM 토글 (연출) */
+document.getElementById('bgm').addEventListener('click', function(){
+  const b = this.querySelector('b');
+  b.textContent = b.textContent === 'ON' ? 'OFF' : 'ON';
+});
 </script>
 </body>
 </html>
